@@ -2,10 +2,8 @@
 TITLE Windows 11 Registry Tweaks
 cls
 @echo ====================================================================================================================
-@echo This will enable the classic right click context menu for win 11
-and disable widgets in the task bar.
-@echo                        To Continue Press enter to cancel exit
-close the window.
+@echo This will enable the classic right click context menu for win 11and disable widgets in the task bar.
+@echo                        To Continue Press enter to cancel exit close the window.
 @echo ====================================================================================================================
 pause
 cls
@@ -19,5 +17,9 @@ reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows\Windows Search" /v AllowCortan
 reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\SearchSettings" /v IsDynamicSearchBoxEnabled /t REG_DWORD /d 0 /f
 @echo 5. Set Smaller Task Bar
 reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v TaskbarSi /t REG_DWORD /d 0 /f
+@echo 6. Remove Chat from Task Bar
+reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v TaskbarMn /t REG_DWORD /d 0 /f
+cls
+@echo done...
 
 pause
